@@ -10,7 +10,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
   </head>
-  <body>
+  <body style = "background-color: black">
     <div class="container">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron text-center">
@@ -47,6 +47,35 @@
             {{ mars.facts | safe }}
           </div>
         </div>
+      </div>
+    </div>
+    <div> 
+      <!--Hemisphere info -->
+      <div class = row id= "mars-hemisphere"> 
+        <!--- sub-->
+          <div class="col-md-12">
+            <div class="row" id="hemisphere_title">
+              <h2 style="text-align:center; color: white;">Mars Hemispheres</h2>
+              <hr style="width:100%">
+            </div>
+          </div>
+      <!-- Hemisphere images -->
+      {% for hemisphere in mars.hemis_information %}
+        <div class="col-xs-6 col-md-3">
+          <figure class="img-responsive">
+            <div class = "thumbnail" style="background-color: black;">
+              <a href = "{{hemisphere.image_link}}" target = "_blank">
+                <div>
+                  <img src = "{{hemisphere.image_link}}" class="img-responsive" alt = "Responsive image" style = "width:100%">
+                  <br>
+                    <figcaption style="text-align: left;">{{hemisphere.title}}</figcaption>
+                  <br>
+                </div>
+              </a>
+            </div>
+          </figure>
+        </div>
+      {% endfor %}
       </div>
     </div>
   </body>
