@@ -32,7 +32,7 @@ def scrape():
    return redirect('/', code=302)
    # {} allows insertion of json data 
    # query parameter json data will replace this 
-   
+
 # set up scraping route, route = 'button' of the web app 
 if __name__ == "__main__":
    app.run()
